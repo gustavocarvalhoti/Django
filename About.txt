@@ -1,0 +1,74 @@
+************************************************************************
+#Comandos
+sudo apt-get install python-pip <- Install on the Ubuntu
+pip install django==1.7.4       <- Install Django
+
+django-admin.py startproject connectedin <- Inicia um projeto
+
+python manage.py migrate <- Cria o banco de dados sqlite3
+
+python manage.py runserver <- Start server
+
+python manage.py startapp perfis <- Cria o aplicativo
+
+************************************************************************
+#Registrar a aplicação
+connectedin/settings.py
+INSTALLED_APPS = ('perfis') <- Add o perfis
+
+************************************************************************
+#Arquivo que retorna respostas para o usuário
+connectedin/perfis/views.py
+
+************************************************************************
+#Rotas
+connectedin/connectedin/urls.py <- Principal
+from django.conf.urls import patterns, include, url
+from django.contrib import admin
+urlpatterns = patterns(
+    '',
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^', include('perfis.urls')), <- Copia as informações do secundário
+)
+
+connectedin/perfis/urls.py <- Secundário
+from django.conf.urls import patterns, include, url
+urlpatterns = patterns(
+    '',
+    url(r'^$', 'perfis.views.index'),
+)
+#url(r'^$', 'perfis.views.index'),
+#http://localhost:8000/
+
+************************************************************************
+#Retorna URL
+from django.shortcuts import render
+'''
+Ao digitar http://localhost:8000/ ele chama essa pagina e retorna o index.html
+'''
+def index(request):
+    return render(request, 'index.html')
+
+#Retorna texto
+from django.http import HttpResponse
+def index(request):
+    return HttpResponse('Welcome fera!')
+
+
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
