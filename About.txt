@@ -1,15 +1,27 @@
 ************************************************************************
 #Comandos
-sudo apt-get install python-pip <- Install on the Ubuntu
-pip install django==1.7.4       <- Install Django
-
+sudo apt-get install python-pip          <- Install on the Ubuntu
+pip install django==1.7.4                <- Install Django
 django-admin.py startproject connectedin <- Inicia um projeto
+python manage.py migrate                 <- Cria o banco de dados sqlite3
+python manage.py runserver               <- Start server
+python manage.py startapp perfis         <- Cria o aplicativo
+python manage.py makemigrations          <- Cria o Schema
+python manage.py migrate                 <- Posta o schema criado no banco de dados
 
-python manage.py migrate <- Cria o banco de dados sqlite3
-
-python manage.py runserver <- Start server
-
-python manage.py startapp perfis <- Cria o aplicativo
+python manage.py shell                          <- Abre o shell do python
+from perfis.models import Perfil                <- Importa o perfil no Shell
+perfil = Perfil(nome='Gustavo', email='gu@terra.com', telefone='3838-5638', nome_empresa='Padtec') <- Cria o perfil
+perfil.save()                                   <- Faz o store no BD
+perfil_encontrado = Perfil.objects.get(id=1)    <- Find
+perfil_encontrado.nome                          <- Imprime o nome
+perfil_encontrado.nome  = 'Gustavo Carvalho'    <- Update
+perfil_encontrado.save()
+perfil.delete()
+perfis = Perfil.objects.filter(email__contains='s')  <- Filter CASE
+perfis = Perfil.objects.filter(email__icontains='s') <- Filter NoTCaSe
+perfis = Perfil.objects.filter(email__startswith='s')<- Start
+Perfil.objects.all()                                 <- Get all
 
 ************************************************************************
 #Registrar a aplicação
@@ -56,6 +68,40 @@ def index(request):
 
 
 ************************************************************************
+#Passar objetos para a página
+connectedin/perfis/models.py
+from django.db import models
+class Perfil(object):
+    def __init__(self, nome='', email='', telefone='', nome_empresa=''):
+        self.nome = nome
+        self.email = email
+        self.telefone = telefone
+        self.nome_empresa = nome_empresa
+
+connectedin/perfis/views.py
+def exibir(request, perfil_id):
+    # print 'ID do perfil recebido -> %s ' % (perfil_id)
+    perfil = Perfil()
+    if perfil_id == '1':
+        perfil = Perfil('Gustavo', 'gu@terra.com', '3838-5638', 'Padtec')
+    return render(request, 'perfil.html', {"perfil": perfil})
+
+connectedin/perfis/templates/perfil.html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>ConnectedIn</title>
+</head>
+<body>
+<h1>Detalhe Perfil</h1>
+Nome: {{perfil.nome}} <br/>
+Email: {{perfil.email}} <br/>
+Telefone: {{perfil.telefone}} <br/>
+Empresa: {{perfil.nome_empresa}}<br/>
+</body>
+</html>
+
 ************************************************************************
 ************************************************************************
 ************************************************************************

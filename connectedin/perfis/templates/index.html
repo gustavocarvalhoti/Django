@@ -5,6 +5,22 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Welcome! Manooooooooooooo!</h1>
+<h1>Perfis</h1>
+{% if perfis %}
+    <ul>
+        {% for perfil in perfis %}
+        <li>
+            <!--
+            A tamplate ta abaixo é melhor
+            <a href="/perfis/{{perfil.id}}">{{perfil.nome}}</a>
+            -->
+            <!--Coloca o ID no final da URL-->
+            <a href="{% url 'exibir' perfil.id %}">{{perfil.nome}}</a>
+        </li>
+        {% endfor%}
+    </ul>
+{% else %}
+    <p>Nenhum perfil encontrado</p>
+{% endif %}
 </body>
 </html>
