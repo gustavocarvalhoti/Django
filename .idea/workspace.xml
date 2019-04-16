@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47326c92-03c4-4ee4-a41a-f8ec90d33d97" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/connectedin/perfis/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/About.txt" beforeDir="false" afterPath="$PROJECT_DIR$/About.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/connectedin/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/connectedin/db.sqlite3" afterDir="false" />
@@ -19,29 +20,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="true" current-in-tab="false">
+      <file pinned="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/About.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="63" selection-start-line="23" selection-start-column="63" selection-end-line="23" selection-end-column="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/connectedin/perfis/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+            <state relative-caret-position="744">
+              <caret line="134" column="61" selection-start-line="134" selection-start-column="61" selection-end-line="134" selection-end-column="61" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/connectedin/perfis/templates/perfil.html">
+        <entry file="file://$PROJECT_DIR$/connectedin/perfis/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+            <state relative-caret-position="375">
+              <caret line="25" selection-start-line="25" selection-end-line="25" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/connectedin/perfis/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="7" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -49,8 +50,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/connectedin/perfis/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="75" lean-forward="true" selection-start-line="10" selection-start-column="75" selection-end-line="10" selection-end-column="75" />
+            <state relative-caret-position="135">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -58,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/connectedin/perfis/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="47" lean-forward="true" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
+            <state relative-caret-position="150">
+              <caret line="10" column="74" selection-start-line="10" selection-start-column="74" selection-end-line="10" selection-end-column="74" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -70,8 +74,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/connectedin/perfis/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
+            <state relative-caret-position="240">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/connectedin/perfis/templates/perfil.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+              <folding>
+                <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,14 +110,20 @@
         <option value="$PROJECT_DIR$/connectedin/connectedin/settings.py" />
         <option value="$PROJECT_DIR$/connectedin/connectedin/urls.py" />
         <option value="$PROJECT_DIR$/connectedin/perfis/template/index.html" />
-        <option value="$PROJECT_DIR$/connectedin/perfis/templates/perfil.html" />
-        <option value="$PROJECT_DIR$/connectedin/perfis/models.py" />
-        <option value="$PROJECT_DIR$/connectedin/perfis/views.py" />
-        <option value="$PROJECT_DIR$/About.txt" />
         <option value="$PROJECT_DIR$/connectedin/perfis/urls.py" />
+        <option value="$PROJECT_DIR$/connectedin/perfis/views.py" />
+        <option value="$PROJECT_DIR$/connectedin/perfis/models.py" />
         <option value="$PROJECT_DIR$/connectedin/perfis/templates/index.html" />
+        <option value="$PROJECT_DIR$/connectedin/perfis/templates/perfil.html" />
+        <option value="$PROJECT_DIR$/connectedin/perfis/templates/base.html" />
+        <option value="$PROJECT_DIR$/About.txt" />
       </list>
     </option>
+  </component>
+  <component name="InvalidFacetManager">
+    <ignored-facets>
+      <facet id="Django/invalid/Python" />
+    </ignored-facets>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="-1" />
@@ -134,7 +156,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -164,19 +185,13 @@
               <item name="Django" type="462c0819:PsiDirectoryNode" />
               <item name="connectedin" type="462c0819:PsiDirectoryNode" />
               <item name="perfis" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Django" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Django" type="462c0819:PsiDirectoryNode" />
-              <item name="connectedin" type="462c0819:PsiDirectoryNode" />
-              <item name="perfis" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -193,7 +208,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.JavaScript" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -227,25 +242,27 @@
       <workItem from="1554938748515" duration="3928000" />
       <workItem from="1555025580816" duration="23000" />
       <workItem from="1555025619828" duration="590000" />
-      <workItem from="1555026309243" duration="3642000" />
+      <workItem from="1555026309243" duration="3819000" />
+      <workItem from="1555067790669" duration="891000" />
+      <workItem from="1555071580697" duration="14000" />
+      <workItem from="1555371251536" duration="5726000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10061000" />
+    <option name="totallyTimeSpent" value="16869000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="64" y="-4" width="1857" height="1085" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26644555" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2763958" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -255,10 +272,11 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32925585" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32956383" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -283,13 +301,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/About.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="63" selection-start-line="23" selection-start-column="63" selection-end-line="23" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/connectedin/connectedin/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -297,17 +308,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/connectedin/perfis/templates/perfil.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/connectedin/perfis/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
+        <state relative-caret-position="240">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/connectedin/perfis/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="47" lean-forward="true" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
+        <state relative-caret-position="150">
+          <caret line="10" column="74" selection-start-line="10" selection-start-column="74" selection-end-line="10" selection-end-column="74" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
@@ -316,22 +337,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/connectedin/perfis/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="75" lean-forward="true" selection-start-line="10" selection-start-column="75" selection-end-line="10" selection-end-column="75" />
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/connectedin/perfis/templates/perfil.html">
+    <entry file="file://$PROJECT_DIR$/connectedin/perfis/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        <state relative-caret-position="90">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="7" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/connectedin/perfis/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        <state relative-caret-position="375">
+          <caret line="25" selection-start-line="25" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/About.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="744">
+          <caret line="134" column="61" selection-start-line="134" selection-start-column="61" selection-end-line="134" selection-end-column="61" />
         </state>
       </provider>
     </entry>

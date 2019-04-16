@@ -23,6 +23,11 @@ perfis = Perfil.objects.filter(email__icontains='s') <- Filter NoTCaSe
 perfis = Perfil.objects.filter(email__startswith='s')<- Start
 Perfil.objects.all()                                 <- Get all
 
+#Pega os convidados pela FK
+from perfis.models import Perfil
+perfil = Perfil.objects.get(id=1)
+for convite in perfil.convites_feitos.all(): convite.convidado.nome <- Lista o nome dos convidados
+
 ************************************************************************
 #Registrar a aplicação
 connectedin/settings.py
@@ -103,10 +108,32 @@ Empresa: {{perfil.nome_empresa}}<br/>
 </html>
 
 ************************************************************************
+Coloca o pass para não dar erro, significa que vai terminar depois
+pass
+
 ************************************************************************
+#Declara FK - Cria uma tabela de relacionamento
+class Convite(models.Model):
+    solicitante = models.ForeignKey(Perfil, related_name='convites_feitos')
+    convidado = models.ForeignKey(Perfil, related_name='convites_recebidos')
+
 ************************************************************************
+#Filter - Shell
+convites_feitos = Convite.objects.filter(solicitante__id =1)
+convites_recebidos = Convite.objects.filter(convidado__id =1)
+
 ************************************************************************
+#Relacionamento Unidirecional
+class Contrato(models.Model): cliente = models.ForeignKey(Cliente)
+#Relacionamento Bidirecional
+class Contrato(models.Model): cliente = models.ForeignKey(Cliente, related_name="contratos")
+
 ************************************************************************
+#Importar arquivos estaticos
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'styles/bootstrap.css' %}">
+<link rel="stylesheet" href="{% static 'styles/main.css' %}">
+
 ************************************************************************
 ************************************************************************
 ************************************************************************

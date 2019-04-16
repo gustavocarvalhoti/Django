@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from perfis.models import Perfil
 
 '''
@@ -17,5 +18,15 @@ def exibir(request, perfil_id):
 
     # if perfil_id == '1':
     # perfil = Perfil('Gustavo', 'gu@terra.com', '3838-5638', 'Padtec')
-
     return render(request, 'perfil.html', {"perfil": perfil})
+
+
+def convidar(request, perfil_id):
+    perfil_a_convidar = Perfil.objects.get(id=perfil_id)
+    perfil_logado = get_perfil_logado(request)
+    perfil_logado.convidar(perfil_a_convidar)
+    return redirect('index')
+
+
+def get_perfil_logado(request):
+    return Perfil.objects.get(id=1)

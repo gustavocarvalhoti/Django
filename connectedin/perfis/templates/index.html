@@ -1,26 +1,26 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Perfis</h1>
-{% if perfis %}
-    <ul>
-        {% for perfil in perfis %}
-        <li>
-            <!--
-            A tamplate ta abaixo é melhor
-            <a href="/perfis/{{perfil.id}}">{{perfil.nome}}</a>
-            -->
-            <!--Coloca o ID no final da URL-->
-            <a href="{% url 'exibir' perfil.id %}">{{perfil.nome}}</a>
-        </li>
-        {% endfor%}
-    </ul>
-{% else %}
-    <p>Nenhum perfil encontrado</p>
-{% endif %}
-</body>
-</html>
+{% extends "base.html" %}
+{% block body%}
+<div class="col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <strong>Todos os perfis:</strong>
+        </div>
+        {% if perfis %}
+        <ul>
+            {% for perfil in perfis %}
+            <li>
+                <!--
+                A tamplate de abaixo é melhor
+                <a href="/perfis/{{perfil.id}}">{{perfil.nome}}</a>
+                -->
+                <!--Coloca o ID no final da URL-->
+                <a href="{% url 'exibir' perfil.id %}">{{perfil.nome}}</a>
+            </li>
+            {% endfor%}
+        </ul>
+        {% else %}
+        <p>Nenhum perfil encontrado</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock%}
