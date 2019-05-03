@@ -6,8 +6,10 @@ django-admin.py startproject connectedin <- Inicia um projeto
 python manage.py migrate                 <- Cria o banco de dados sqlite3
 python manage.py runserver               <- Start server
 python manage.py startapp perfis         <- Cria o aplicativo
+python manage.py startapp usuarios
 python manage.py makemigrations          <- Cria o Schema
 python manage.py migrate                 <- Posta o schema criado no banco de dados
+pip install MySQL-python                 <- Instalando o MySQL
 
 python manage.py shell                          <- Abre o shell do python
 from perfis.models import Perfil                <- Importa o perfil no Shell
@@ -135,12 +137,105 @@ class Contrato(models.Model): cliente = models.ForeignKey(Cliente, related_name=
 <link rel="stylesheet" href="{% static 'styles/main.css' %}">
 
 ************************************************************************
+#Coloca o s do plural automatico
+convite{{perfil_logado.convites_recebidos.count | pluralize}}
+
 ************************************************************************
+#Variavel de escopo - Pode usar sempre que precisar o total_de_convites
+{% with total_de_convites=perfil_logado.convites_recebidos %}
+{% endwith %}
+
 ************************************************************************
+#Imprimir para testar
+print 'Solicitante -> %s %s' % (self.id, self.nome)
+print 'Convidado   -> %s %s' % (perfil_convidado.id, perfil_convidado.nome)
+
 ************************************************************************
+#Para poder enviar o Form (POST)
+{% csrf_token %}
+
 ************************************************************************
+#apagando o banco, delete o arquivo abaixo
+connectedin/db.sqlite3
+
 ************************************************************************
+#Validar formulário - Valida dados e se existe no banco
+connectedin/usuarios/forms.py
+from django import forms
+from django.contrib.auth.models import User
+
+class RegistrarUsuarioForm(forms.Form):
+    nome = forms.CharField(required=True)
+    email = forms.EmailField(required=True)
+    senha = forms.CharField(required=True)
+    telefone = forms.CharField(required=True)
+    nome_empresa = forms.CharField(required=True)
+
+    def is_valid(self):
+        valid = True
+        if not super(RegistrarUsuarioForm, self).is_valid():
+            self.adiciona_erro('Por favor, verifique os dados informados')
+            valid = False
+
+        user_exists = User.objects.filter(username=self.data['nome']).exists()
+
+        if user_exists:
+            self.adiciona_erro('Usuario ja existente')
+            valid = False
+
+        return valid
+
+    def adiciona_erro(self, message):
+        errors = self._errors.setdefault(forms.forms.NON_FIELD_ERRORS, forms.utils.ErrorList())
+        errors.append(message)
+
+connectedin/usuarios/views.py <- Chama o validate
+def post(self, request):
+    form = RegistrarUsuarioForm(request.POST)
+
+    if form.is_valid():
+        dados_form = form.data
+
+        usuario = User.objects.create_user(
+            dados_form['nome'],
+            dados_form['email'],
+            dados_form['senha']
+        )
+
+        perfil = Perfil(
+            nome=dados_form['nome'],
+            email=dados_form['email'],
+            telefone=dados_form['telefone'],
+            nome_empresa=dados_form['nome_empresa'],
+            usuario=usuario
+        )
+
+        perfil.save()
+
+        return redirect('index')
+
+    return render(request, self.template_name, {'form': form})
+
+
 ************************************************************************
+#Login e logout easy
+connectedin/connectedin/settings.py
+MIDDLEWARE_CLASSES = (
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+)
+
+connectedin/usuarios/urls.py
+url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}, name='login'),
+url(r'^logout/$', 'django.contrib.auth.views.logout_then_login', {'login_url': '/login/'}, name='logout'),
+
+connectedin/perfis/views.py
+@login_required <- Coloca nos que vc quer validar
+def index(request):
+    return render(request, 'index.html', {'perfis': Perfil.objects.all(), 'perfil_logado': get_perfil_logado(request)})
+
+connectedin/usuarios/templates/login.html <- Faz o Login
+
+
 ************************************************************************
 ************************************************************************
 ************************************************************************
