@@ -1,19 +1,24 @@
 {% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <title>ConnectedINN</title>
     <meta charset="UTF-8">
     <meta charset="viewPort" content="width=device-width">
     <link rel="stylesheet" href="{% static 'styles/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'styles/main.css' %}">
-    <title>ConnectedINN</title>
 </head>
 <body>
 <div class="container">
     <div class="header">
         <ul class="nav nav-pills pull-right">
-            <li><a href="#">{{perfil.nome}}</a></li>
-            <li><a href="#">Logout</a></li>
+            <li>
+                <a href="{% url 'exibir' perfil_logado.id %}">
+                    ID: {{ perfil_logado.id }} - Nome: {{ perfil_logado.nome }}
+                </a>
+            </li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
         </ul>
         <h3 class="text-muted">
             <a href="{% url 'index' %}">ConnectedINN</a>

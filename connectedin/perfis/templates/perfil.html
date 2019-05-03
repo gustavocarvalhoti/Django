@@ -1,5 +1,6 @@
 {% extends "base.html" %}
-{% block body%}
+
+{% block body %}
 <div class="row">
     <div class="col-lg-12">
         <h2 style="margin-top: 0">{{perfil.nome}}</h2>
@@ -8,7 +9,11 @@
             <abbr title="Telefone">{{perfil.telefone}}</abbr> <br/>
             <a href="mailto: {{perfil.email}}">{{perfil.email}}</a> <br/>
         </address>
+        {% if ja_eh_contato %}
+        <div class="well well-sm">Vocês estão conectados!</div>
+        {% else %}
         <a href="{% url 'convidar' perfil.id %}">Convidar</a>
+        {% endif %}
     </div>
 </div>
-{% endblock%}
+{% endblock %}

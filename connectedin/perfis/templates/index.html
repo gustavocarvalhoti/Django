@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+
 {% block body%}
 <div class="col-lg-12">
     <div class="panel panel-default">
@@ -16,11 +17,56 @@
                 <!--Coloca o ID no final da URL-->
                 <a href="{% url 'exibir' perfil.id %}">{{perfil.nome}}</a>
             </li>
-            {% endfor%}
+            {% endfor %}
         </ul>
         {% else %}
         <p>Nenhum perfil encontrado</p>
         {% endif %}
+    </div>
+    <div id="Convites" class="panel panel-default">
+        {% with total_de_convites=perfil_logado.convites_recebidos %}
+        {% if total_de_convites.count %}
+        <div class="panel-heading">
+            <strong>
+                Você tem {{total_de_convites.count}} convite{{total_de_convites.count| pluralize}} aguardando aprovação
+            </strong>
+        </div>
+        <ul class="list-group">
+            {% for convite in total_de_convites.all %}
+            <li class="list-group-item">
+                {{ convite.solicitante.nome }}
+                <a href="{% url 'aceitar' convite.id %}" class="pull-right">Aceitar</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <div class="panel-body">
+            <p>Você não possui nenhum convite pendente :(</p>
+        </div>
+        {% endif %}
+        {% endwith %}
+    </div>
+    <div id="Contatos" class="panel panel-default">
+        {% with total_de_contatos=perfil_logado.contatos %}
+        {% if total_de_contatos.count %}
+        <div class="panel-heading">
+            <strong>
+                Você tem {{total_de_contatos.count}} contato{{total_de_contatos.count| pluralize}}
+            </strong>
+        </div>
+        <ul class="list-group">
+            {% for contato in total_de_contatos.all %}
+            <li class="list-group-item">
+                <a href="{% url 'exibir' contato.id %}">{{ contato.nome }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <div class="panel-body">
+            <p>Você não possui contatos no momento</p>
+        </div>
+        {% endif %}
+        {% endwith %}
     </div>
 </div>
 {% endblock%}
